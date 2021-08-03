@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
     data() {
         return {
@@ -46,6 +46,15 @@ export default {
             else this.imgSrc = require('../static/images/sunny.gif');
         }
     },
+    async created() {
+        if(this.getCityName) {
+            const payload = { city:this.getCityName, refresh:false };
+            await this.searchCity(payload);
+        }
+    },
+    methods: {
+        ...mapActions(['searchCity'])
+    }
 
 }
 </script>

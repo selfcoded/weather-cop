@@ -1,10 +1,7 @@
 <template>
-  <div>
-    <CityDetails />
-    <CityList />
-    <Footer />
-  </div>
- 
+    <div>
+        <FooterLinks />
+    </div>
 </template>
 
 <script>
