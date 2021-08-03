@@ -2,8 +2,8 @@
     <div id="selectedCityPopup" :class="{ 'show' : isToggled}">
         <input id="popupInput" v-model="cityName" type="text">
         <div class="btn-wrapper">
-            <button>{{staticData.clear}}</button>
-            <button>{{staticData.done}}</button>
+            <button @click="clearCityName()">{{staticData.clear}}</button>
+            <button @click="loadDetailOfCity()">{{staticData.done}}</button>
         </div>
   </div>
   
@@ -21,6 +21,10 @@ export default {
                 done: 'done'
             },
             cityName: '',
+            cityDetail: {
+                city: '',
+                temp: '30'
+            }
             
         }
     },
@@ -28,6 +32,10 @@ export default {
         clearCityName() {
             this.cityName = '';
         },
+        loadDetailOfCity() {
+            this.cityDetail.city = this.cityName;
+            this.$emit('loadDetailOfCity', this.cityDetail);
+        }
     }
 
 }

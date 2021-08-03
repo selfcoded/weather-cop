@@ -8,7 +8,7 @@
                 :class="{ 'fa-caret-down': !isToggled, 'fa-caret-up': isToggled }" 
                 aria-hidden="true"></i>
             </button>
-            <AddCity :is-toggled="isToggled" />
+            <AddCity :is-toggled="isToggled" @loadDetailOfCity="typedCity"/>
         </div>
         <div class="city-list-title">{{staticData.history}}</div>
         <div v-if="cities.length > 0" class="city-list">
@@ -60,6 +60,11 @@ export default {
     methods: {
         openList () {
             this.isToggled = !this.isToggled;
+        },
+        typedCity (value) {
+            console.log(value);
+            this.cities = [ ...this.cities, value ]
+            console.log(this.cities);
         }
     }
 }
