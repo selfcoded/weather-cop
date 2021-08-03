@@ -40,6 +40,7 @@ export default {
         async loadDetailOfCity() {
             const payload = {city:this.cityName, refresh:false}
             await this.searchCity(payload)
+            this.$cookies.set('cities', JSON.stringify(this.getList), { path: '/', maxAge: 60 * 60 * 24 * 7 })
         }
     }
 
