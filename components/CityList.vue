@@ -11,7 +11,7 @@
             <AddCity :is-toggled="isToggled" />
         </div>
         <div class="city-list-title">{{staticData.history}}</div>
-        <div class="city-list-wrapper">
+        <div v-if="!getLoadingDataStatus"  class="city-list-wrapper">
             <div v-if="getList !== null || Object.keys($cookies.get('cities')).length > 0 " class="city-list">
                 <div v-for="(city, index) in initList" :key="`list-${index}`"  class="city-item">
                     <div  class="city-name">
@@ -24,15 +24,20 @@
             </div>
             <div v-else class="city-list">{{staticData.noCities}}</div>
         </div>
+        <div v-else>
+          <Loader />
+        </div>
     </div>
 </template>
 
 <script>
 import AddCity from '@/components/AddCity.vue'
+import Loader from '@/components/Loader.vue'
 import { mapGetters, mapActions } from 'vuex'
 export default {
     components: {
         AddCity,
+        Loader
     },
     data() {
         return {

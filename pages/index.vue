@@ -1,10 +1,19 @@
 <template>
-  <div class="body-container">
+  <div>
+    <PullToRefresh />
+    <div class="body-container">
       <CityDetails />
       <CityList />
     </div>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+
+}
 </script>
+
+<style>
+
+</style>
