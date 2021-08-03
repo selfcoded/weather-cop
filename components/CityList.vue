@@ -40,7 +40,20 @@ export default {
                 refresh: 'refresh',
                 delete: 'delete'
             },
-            cities: [],
+            cities: [
+                {
+                    city: 'lju',
+                    temp: '20'
+                },
+                {
+                    city: 'gorica',
+                    temp: '20'
+                },
+                {
+                    city: 'koper',
+                    temp: '20'
+                }
+            ],
             isToggled: false
         } 
     },
