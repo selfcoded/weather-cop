@@ -1,5 +1,8 @@
 <template>
-  <Tutorial/>
+  <div class="body-container">
+      <CityDetails />
+      <CityList />
+    </div>
 </template>
 
 <script>

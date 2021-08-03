@@ -1,0 +1,215 @@
+*, body {
+    padding: 0;
+    margin: 0;
+    overflow:hidden;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-transform: capitalize;
+    background-image: url('../static/images/background.jpg');
+}
+
+button {
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-transform: capitalize;
+    border: 2px solid rgba(25, 60, 155, 0.781);
+    background-color: #dadada87;
+}
+.btn-typed {
+    background-color: #9c9b9b87;
+    border: 2px solid rgba(122, 139, 184, 0.781);
+}
+.btn-wrapper {
+    display: inline;
+}
+
+.body-container {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+    margin-top: 120px;
+  }
+
+
+/* ======= HEADER CONTAINER START ========= */
+.header-container {
+    padding: 20px;
+    font-size: 20px;
+    background-color: #add3f43b;
+    text-transform: capitalize;
+}
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.header-left {
+    width: 38%;
+    height: 120px;
+}
+.header-left img {
+    width: 100%;
+}
+.header-right {
+    padding-top: 30px;
+    width: 60%;
+}
+/* ======= HEADER CONTAINER END ========= */
+
+/* ======= POPUP START ========= */
+.show {
+    display: block !important;
+}
+#selectedCityPopup {
+    position: relative;
+    background-color: teal;
+    padding: 20px;
+    margin: 5px 0;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#popupInput {
+    height: 30px;
+    width: 60%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+/* ======= POPUP END ========= */
+/* ======= LIST CONTAINER START ========= */
+.list-container {
+    padding: 20px;
+    background-color: #add3f43b;
+}
+.city-list-title {
+    margin-top: 15px;
+}
+.city-list-wrapper {
+    max-height: 340px;
+    overflow-y: auto;
+}
+.city-list {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+.city-item {
+    width: 100%;
+    margin-top: 5px;
+}
+.city-name {
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    text-transform: capitalize;
+}
+/* ======= LIST CONTAINER END ========= */
+/* ======= MOBILE START ========= */
+@media (max-width: 780px){
+    .body-container {
+        margin-top: 40px;
+    }
+    #popupInput, .city-name {
+        width: 50%;
+    }
+    .city-list-wrapper {
+        max-height: 260px;
+    }
+}
+@media (max-width: 620px){
+    #popupInput {
+        width: 100%;
+    }
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .btn-wrapper button:first-child {
+        margin-right: 5px;
+    }
+    .city-name {
+        width: 40%;
+    }
+    .header-wrapper {
+        flex-wrap: wrap;
+    }
+    .header-right, .header-left {
+        width: 100%;
+    }
+   
+}
+@media (max-width: 520px){
+    .body-container {
+        width: 80%;
+    }
+   
+}
+@media (max-width: 390px){
+    .city-item button {
+        padding: 6px 8px;
+    }
+   
+}
+/* ======= MOBILE END ========= */
+/* ======= LOADER START ========= */
+.pull-to-refresh {
+    width: 100%;
+    height: 95px;
+    position: absolute;
+    z-index: 11;
+    background-color: transparent;
+}
+.loader-container {
+    transition: background-color 3s;
+}
+.lds-wrapper {
+    background-color: #dadada87;
+}
+.lds-ring {
+    margin: 0 auto;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 10px 0;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin: 8px;
+    border: 8px solid rgba(25, 60, 155, 0.781);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgba(25, 60, 155, 0.781) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+/* ======= LOADER END ========= */
