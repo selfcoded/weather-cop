@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
     props: {
         'isToggled': Boolean
@@ -28,13 +29,17 @@ export default {
             
         }
     },
+    computed: {
+        ...mapGetters(['getList'])
+    },
     methods: {
+        ...mapActions(['searchCity']),
         clearCityName() {
             this.cityName = '';
         },
-        loadDetailOfCity() {
-            this.cityDetail.city = this.cityName;
-            this.$emit('loadDetailOfCity', this.cityDetail);
+        async loadDetailOfCity() {
+            const payload = {city:this.cityName, refresh:false}
+            await this.searchCity(payload)
         }
     }
 
