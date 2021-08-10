@@ -12,7 +12,7 @@
         </div>
         <div class="city-list-title">{{staticData.history}}</div>
         <div v-if="!getLoadingDataStatus"  class="city-list-wrapper">
-            <div v-if="getList !== null || Object.keys($cookies.get('cities')).length > 0 " class="city-list">
+            <div v-if="getList !== null || (Boolean($cookies.get('cities')) && Object.keys($cookies.get('cities')).length > 0) " class="city-list">
                 <div v-for="(city, index) in initList" :key="`list-${index}`"  class="city-item">
                     <div  class="city-name">
                         <span>{{city.city}} --</span>
